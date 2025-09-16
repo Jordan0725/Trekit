@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Dashboard_da_trilha.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./Dashboard_da_trilha.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <title>Document</title>
 </head>
 <body>
     <header>
-        <img src="imagens/Trekit_logo.svg" alt="Trekit_logo">
-        <div class="center_header"> 
-
+        <img src="imagens/Trekit_logo.svg" alt="Trekit_logo" />
+        <div class="center_header">
             <div>Explorar</div>
             <div>Minhas Trilhas</div>
         </div>
@@ -20,7 +20,130 @@
         </div>
     </header>
     <div class="main">
-
+        <div class="Nome_trilha">
+            <p>Trilha sem Nome</p>
+        </div>
+        <div class="stars">
+            <img src="imagens/Stars.svg" alt="stars" />
+        </div>
+        <div class="sessaoUm">
+            <div id="carouselImagens" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://hotelrouxinol.com.br/wp-content/uploads/2019/02/saiba-aqui-quais-sao-as-5-melhores-trilhas-em-santa-catarina.jpeg" class="d-block w-100" alt="..." />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/04/Design-sem-nome-1-e1744561238543.png?w=1200&h=900&crop=1" class="d-block w-100" alt="..." />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://agendor-blog-uploads.s3.sa-east-1.amazonaws.com/2022/09/12094319/trilha-de-aprendizagem-organizacional.jpg" class="d-block w-100" alt="..." />
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselImagens" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselImagens" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="Infos_trilha">
+                <div class="localizacao">
+                    <span class="label_infos">Localização</span>
+                    <div class="content_infos"> <img src="imagens/Marcador.svg" alt="Marcador"> Bairro,Florianópolis-SC</div>
+                </div>
+                <div class="dificuldade">
+                    <span class="label_infos">Dificuldade</span>
+                    <div class="content_infos"> <img src="imagens/Dificuldade.svg" alt="dificuldade"> Moderado</div>
+                </div>
+                <div class="Tempo_distancia">
+                    <div class="tempo">
+                        <span class="label_infos">Tempo</span>
+                        <div class="content_infos"> <img src="imagens/relogio.svg" alt="relogio"> 1h30</div>
+                    </div>
+                    <div class="distancia">
+                        <span class="label_infos">Distância</span>
+                        <div class="content_infos"> <img src="imagens/caminhada.svg" alt="caminhada"> 00.00 km</div>
+                    </div>
+                </div>
+                <div class="sinalizacao">
+                    <span class="label_infos">Sinalização</span>
+                    <div class="content_infos"> <img src="imagens/sinalizacao.svg" alt="sinalizacao"> Sim</div>
+                </div>
+            </div>
+        </div>
+        <div class="sessaoDois">
+            <div class="Post_perfil">
+                <div class="Container_perfil">
+                    <img src="imagens/Foto_perfil_trekit.svg" alt="foto_perfil">
+                    <div class="post_nome_data">
+                        <div class="Nome_perfil">Feita por Trekit</div>
+                        <div>Postado em 19 de agosto de 2025.</div>
+                    </div>
+                </div>
+                <div class="like"> <img src="imagens/Like.svg" alt="coracao"></div>
+            </div>
+            <div class="descricao">
+                <p>Aqui ficaria uma descrição mais detalhada sobre a trilha de modo geral ou mais analítica quando feita pelo usuário, desde coisas positivas até algo mais simples como: “trilha dinâmica na região tal, extremamente divertidade e tals ai” até algo menos redondante sla o que eu estou escrenvendo só to cobrindo o máximo de espaço possível enquanto eu escrevo opiniões e coisas aleatórias da minha cabeça esquizofrênica</p>
+            </div>
+            <div class="Like"></div>
+        </div>
+        <div class="sessaoTres">
+            <div class="mapa_container">
+                <p>Mapa</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1085.7084767955225!2d-48.535606655666626!3d-27.79701798604657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952725d3668e8923%3A0xea23afb5d61834c9!2sTrilha%20do%20Saquinho!5e1!3m2!1spt-BR!2sbr!4v1758033730518!5m2!1spt-BR!2sbr" width="550.018rem" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="Info_endereco">
+                    <img src="imagens/Marcador.svg" alt="marcador">
+                    <div> R. Fulano - Bairro, Florianópolis-SC. Aqui se escrevem informações adicionais do endereço.</div>
+                </div>
+            </div>
+            <div class="container_generico">
+                    <div class="title_OT"><p>Outras trilhas</p></div>
+                    <div class="outras_trilhas">
+                    
+                        <div class="trilha_item">
+                            <img src="https://buracodopadre.com.br/wp-content/uploads/2023/12/site-atracoes-trilha-principal.jpg" class="preview_OT" alt="imagem_trilha">
+                            <div class="trilhas_OT_info">
+                                <div class="nome_trilha_OT"><span>Trilha sem Nome</span></div>
+                                <div>Feita por Trekit</div>
+                                <div class="avaliacao_OT"><img src="imagens/Stars.svg" alt="stars"></div>
+                            </div>
+                        </div>
+                        <div class="trilha_item">
+                            <img src="https://buracodopadre.com.br/wp-content/uploads/2023/12/site-atracoes-trilha-principal.jpg" class="preview_OT" alt="imagem_trilha">
+                            <div class="trilhas_OT_info">
+                                <div class="nome_trilha_OT"><span>Trilha sem Nome</span></div>
+                                <div>Feita por Trekit</div>
+                                <div class="avaliacao_OT"><img src="imagens/Stars.svg" alt="stars"></div>
+                            </div>
+                        </div>                <div class="trilha_item">
+                            <img src="https://buracodopadre.com.br/wp-content/uploads/2023/12/site-atracoes-trilha-principal.jpg" class="preview_OT" alt="imagem_trilha">
+                            <div class="trilhas_OT_info">
+                                <div class="nome_trilha_OT"><span>Trilha sem Nome</span></div>
+                                <div>Feita por Trekit</div>
+                                <div class="avaliacao_OT"><img src="imagens/Stars.svg" alt="stars"></div>
+                            </div>
+                        </div>                <div class="trilha_item">
+                            <img src="https://buracodopadre.com.br/wp-content/uploads/2023/12/site-atracoes-trilha-principal.jpg" class="preview_OT" alt="imagem_trilha">
+                            <div class="trilhas_OT_info">
+                                <div class="nome_trilha_OT"><span>Trilha sem Nome</span></div>
+                                <div>Feita por Trekit</div>
+                                <div class="avaliacao_OT"><img src="imagens/Stars.svg" alt="stars"></div>
+                            </div>
+                        </div>                <div class="trilha_item">
+                            <img src="https://buracodopadre.com.br/wp-content/uploads/2023/12/site-atracoes-trilha-principal.jpg" class="preview_OT" alt="imagem_trilha">
+                            <div class="trilhas_OT_info">
+                                <div class="nome_trilha_OT"><span>Trilha sem Nome</span></div>
+                                <div>Feita por Trekit</div>
+                                <div class="avaliacao_OT"><img src="imagens/Stars.svg" alt="stars"></div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        </div>
     </div>
+    <script src="Dashboard_da_trilha.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
