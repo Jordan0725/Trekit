@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Inter";
+  src: url("fontes/Inter-VariableFont_opsz\,wght.ttf") ;
+}
+*{
+    margin: 0%;    
+    font-family:"Inter";
+}
+header{
+    height: 8rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+}
+img{
+    height: 2.188rem;
+    width: 6.438rem;
+    margin-inline: 10.313rem;
+}
+.center_header{
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    gap: 3rem;
+}
+.direita_header{
+    width: auto;
+    margin-inline: 10.313rem;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+.button_header{
+    background-color: #2FAC66;
+    border: none;
+    border-radius: 10px;
+    height: 3.03rem;
+    width: 7.127rem;
+    font-size: 1rem;
+    color: white;
+}
+.main{
+    background-color: #2FAC66;
+    margin-inline: 13.438rem;
+    height: 4rem;
+    
+}
