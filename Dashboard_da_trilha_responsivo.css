@@ -1,0 +1,825 @@
+@font-face {
+    font-family: "Inter";
+    src: url("fontes/Inter-VariableFont_opsz\,wght.ttf") ;
+  }
+  *{
+      margin: 0%;    
+      font-family:"Inter";
+  }
+  *,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F2F8F3;
+    margin: 0;;
+}
+:root {
+    --verde: #2FAC66;
+    --preto: #232624;
+    --light-white: #F2F8F3;
+    --light-gray: #EAF0EB;
+    --border-color: #5B605C;
+}
+
+ header {
+    background-color: var(--light-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 0;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    background-color: #F2F8F3;
+    z-index: 1000;
+}
+
+.navbar_inner {
+    width: 100%;
+    max-width: 105rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_links {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.botoesnavcentrais {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    margin: 0 auto;
+    padding-left:8rem;
+}
+
+.botoesnavlogin {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.botaonavbase {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #383D39;
+    cursor: pointer;
+    padding: 0;
+}
+
+.botaologar {
+    background-color: var(--verde);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.8rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.hamburger_menu {
+    display: none; /* Escondido por padrão em telas grandes */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburger_menu span {
+    width: 2rem;
+    height: 0.25rem;
+    background: #232624;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+/* Efeitos do hambúrguer ativo */
+.hamburger_menu.active span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.hamburger_menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger_menu.active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+
+/* Media Query para telas menores */
+@media (max-width: 1000px) { /* Ajuste o breakpoint conforme necessário */
+    .hamburger_menu {
+        display: flex; /* Mostra o hambúrguer em telas pequenas */
+    }
+
+    .nav_links {
+        display: none; /* Esconde os links por padrão em telas pequenas */
+        flex-direction: column;
+        position: absolute;
+        top: 8rem; /* Abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: var(--light-white);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+        z-index: 9; /* Abaixo do header mas acima do conteúdo */
+        align-items: center;
+    }
+
+    .nav_links.active {
+        display: flex; /* Mostra os links quando a classe 'active' é adicionada */
+    }
+
+    .botoesnavcentrais,
+    .botoesnavlogin {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        gap: 1rem;
+    }
+
+    .botoesnavcentrais {
+        margin: 0; /* Remove a margem automática */
+        padding-left: 0; /* Remove o padding-left */
+    }
+
+    .botaonavbase,
+    .botaologar {
+        width: 80%; /* Ajusta a largura dos botões no menu mobile */
+        text-align: center;
+        padding: 0.8rem 1.5rem;
+        margin: 0.5rem auto; /* Centraliza os botões */
+    }
+}
+  /* header{
+      height: 8rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+  }
+  header img{
+      height: 2.188rem;
+      width: 6.438rem;
+      margin-inline: 10.313rem;
+  }
+  .center_header{
+      width: auto;
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+      gap: 3rem;
+  }
+  .direita_header{
+      width: auto;
+      margin-inline: 10.313rem;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      gap: 3rem;
+  }
+  .button_header{
+      background-color: #2FAC66;
+      border: none;
+      border-radius: 10px;
+      height: 3.03rem;
+      width: 7.127rem;
+      font-size: 1rem;
+      color: white;
+  } */
+  .main{
+      background-color: #ac2f2f00;
+      margin-inline: 13.438rem;
+      height: auto;
+      margin-top: 8rem;
+      
+  }
+  .Nome_trilha{
+      font-size: 2rem;
+      margin-top: 3.938rem;
+  }
+  .stars{
+      margin-left:0%;
+      margin-top: -1%;
+      margin-bottom: 2.188rem;
+  
+  }
+  .stars img{
+      height: 2.018rem;
+      width: 10.644rem;
+  }
+  .sessaoUm{
+      display: flex;
+      justify-content: space-between;
+  }
+  /* CAROUSEL */
+  #carouselImagens {
+      width: 55.018rem;
+      height: 27.034rem; 
+      overflow: hidden;
+      border-radius: 2rem;
+    }
+    
+    #carouselImagens .carousel-item img {
+      object-fit: cover;
+      width: 55.018rem;
+      height: 27.034rem; 
+    } 
+    /* Botões do carrossel */
+  #carouselImagens .carousel-control-prev,
+  #carouselImagens .carousel-control-next {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: white;
+    border-radius: 50%;
+    top: 90%;
+    transform: translateY(-50%);
+    opacity: 1; /* sempre visível */
+  }
+  
+  /* Ícones */
+  #carouselImagens .carousel-control-prev-icon,
+  #carouselImagens .carousel-control-next-icon {
+    filter: invert(1); /* deixa preto */
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  /* Ajuste da posição */
+  #carouselImagens .carousel-control-prev {
+    left: 1rem;
+  }
+  
+  #carouselImagens .carousel-control-next {
+    right: 1rem;
+  }
+  /* ---------------------- */
+  
+  .Infos_trilha{
+      height: 27.034rem; 
+      width: 100%;
+      max-width: 24.188rem;
+      padding-left: 2rem;
+  }
+  .label_infos {
+      display: inline-block;
+      margin-left: 1.063rem;
+      margin-top: 1.063rem;
+      font-weight: bold;
+  }
+  .content_infos{
+      margin-left: 1.063rem;
+  }
+  .localizacao{
+      background-color: #E2E8E4;
+      width: 109.015%;
+      height: 5.5rem;
+      border-radius: 0.8rem;
+      display: block;
+  }
+  .dificuldade{
+      background-color: #E2E8E4;
+      width: 109.015%;
+      height: 5.5rem;
+      border-radius: 0.8rem;
+      margin-top: 1.25rem;
+  }
+  .Tempo_distancia{
+      display: flex;
+      width: 110%;
+      max-width: 24.188rem;
+      justify-content: space-between;
+  }
+  .tempo{
+      background-color: #E2E8E4;
+      width: 47.55%;
+      height: 5.5rem;
+      border-radius: 0.8rem;
+      margin-top: 1.25rem;
+  }
+  .distancia{
+      background-color: #E2E8E4;
+      width: 47.55%;
+      height: 5.5rem;
+      border-radius: 0.8rem;
+      margin-top: 1.25rem;
+  }
+  .sinalizacao{
+      background-color: #E2E8E4;
+      width: 109.015%;
+      height: 5.5rem;
+      border-radius: 0.8rem;
+      margin-top: 1.25rem;
+  }
+  .sessaoDois{
+    width: 67.452%;
+    max-width: 55.018rem;
+  }
+  .Post_perfil{
+      margin-top: 1.625rem;
+      display: flex;
+      justify-content: space-between;
+      max-width: 55.018rem;
+      width: 99%;
+  }
+  .Container_perfil{
+      display: flex;
+      align-items: center;
+  }
+  .Nome_perfil{
+      font-size: 1.2rem;
+  }
+  .Post_perfil img{
+      height: 3.693rem;
+      width: 3.75rem;
+  }
+  .post_nome_data{
+      display: block;
+      align-items: center;
+      margin-left: 1.625rem;
+  }
+  .like img{
+      height: 2.5rem;
+      width: 2.5rem;
+  }
+  .descricao{
+      margin-left: 1.5rem;
+      margin-top: 4.063rem;
+      width: 95%;
+      max-width: 55.018rem;
+      font-size: 0.95rem;
+  }
+  .sessaoTres{
+      display: flex;
+      justify-content: space-between;
+  }
+  .mapa_container{
+      margin-top: 8.125rem;
+  }
+  .mapa_container p{
+      font-size: 2rem;
+  }
+  iframe {
+      width: 100%;
+      height: 27.034rem;
+      border-radius: 2rem;
+      border: none; /* remover a borda inline */
+      margin-bottom: 2rem;
+    }
+  .Info_endereco{
+      font-size: 1.2rem;
+      display: flex;
+      margin-bottom: 8rem;
+  }
+  .Info_endereco img{
+      margin-right: 0.625rem;
+  }
+  .title_OT{
+      font-size: 1.8rem;
+      width: 24.188rem;
+  }
+  .outras_trilhas{
+      height: 39.625rem;
+      width: 24.188rem;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background-color: #f9f9f9;
+      padding-right: 0.5rem; /* espaço para a rolagem */
+      border-radius: 0.8rem;
+  }
+  .outras_trilhas::-webkit-scrollbar {
+      width: 8px;
+  }
+  
+  .outras_trilhas::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+  }
+  
+  .outras_trilhas::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+  }
+  
+  .outras_trilhas::-webkit-scrollbar-thumb:hover {
+      background: #555;
+  }
+  .trilha_item{
+      width: 23.25rem;
+      height: 8.633rem;
+      background-color: #E2E8E4;
+      margin-bottom: 0.688rem;
+      border-radius: 0.6rem;
+      display: flex;
+  }
+  .preview_OT{
+      height: 8.625rem;
+      width: 10.509rem;
+      border-radius: 0.6rem;
+  
+  }
+  .trilhas_OT_info{
+      margin-left: 1.125rem;
+      margin-top: 1.313rem;
+  }
+  .nome_trilha_OT{
+      font-size: 1.1rem;
+      font-weight: 600;
+  }
+  .avaliacao_OT img{
+      width: 6.108rem;
+      height: 1.102rem;
+  }
+  .container_generico{
+      display: block;
+      padding-left: 2rem;
+  }
+  .sessaoQuatro{
+      display: block;
+  }
+  .Comentarios_title{
+      font-size: 2rem;
+  }
+  .Qnt_filtro{
+      display: flex;
+      justify-content: space-between;
+      width: 18.75rem;
+      margin-bottom: 2.688rem;
+  }
+  .input_comentario{  
+      height: 5.25rem;
+      width: 100%;
+      border-radius: 1rem;
+      border: none;
+      background-color: #E2E8E4;
+      margin-bottom: 1.125rem;
+  }
+  .input_comentario::placeholder{
+      padding-left: 1rem;
+      padding-top: 1rem !important;
+  }
+  .botoes_comentarios{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3.313rem;
+  
+  }
+  .botoes_comentarios button{
+      width: 7.563rem;
+      height: 2.313rem;
+      border-radius: 0.6rem;
+  }
+  .botao_anexar{
+      color: white;
+      background-color:#2FAC66;
+      border: none ;
+  
+  }
+  .botao_cancelar{
+      border: 0.1rem solid;
+  }
+  .sessaoCinco{
+  
+  }
+  .botao_enviar{
+      border: none;
+      background: #2FAC66;
+      background: linear-gradient(90deg,rgba(47, 172, 102, 1) 0%, rgba(75, 200, 234, 1) 100%);
+      color: white;
+  }
+  .comentario{
+      display: block;
+  }
+  .perfil_comentario{
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.688rem;
+  }
+  .Foto_e_nome{
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 1.2rem;
+      margin-right: 1.25rem;
+  }
+  .foto_comentario{
+      height: 4.063rem;
+      width: 4.063rem;
+      background-color: #2FAC66;
+      border-radius: 50%;
+      margin-right: 1.25rem;
+  }
+  .Content_comentario{
+      justify-items: center;
+      margin-inline: 13.438rem;
+  
+  }
+  .container_comentario{
+      width: 160%;
+      max-width: 70.938rem;
+      margin-bottom: 4.813rem;
+  
+  }
+  .texto_comentario{
+      margin-bottom: 2.75rem;
+  }
+  .imagens_comentario{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2.813rem;
+  }
+  .imagens_comentario img{
+      height: 16.761rem;
+      width: 21.539rem;
+      border-radius: 1.7rem;
+      margin-inline: 0.1rem;
+      display: block; 
+  }
+ .ver_imagens{
+    height: 16.761rem;
+    width: 21.539rem;
+    border-radius: 1.7rem;
+    background-image: url('https://toptripadventure.com.br/wp-content/uploads/2022/06/itupava-4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ver_todas{
+    border-radius: 1.7rem;
+    height: 16.761rem;
+    width: 21.539rem;
+    color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Para suavizar a transição */
+}
+
+.ver_todas:hover {
+    background-color: #0000009a;
+    color: white;
+}
+
+  .Curtir{
+      width: 7.125rem;
+      height: 2.438rem;
+      background-color: #E2E8E4;
+      justify-content: center;
+      border-radius: 0.9rem;
+      align-items: center;
+      display: flex;
+  }
+  .Curtir img{
+      margin-right: 1rem;
+  }
+  .linha{
+      width: 160%;
+      height: 1rem;
+      box-shadow: 0px -1px 0px #5B605C;
+  }
+  
+  /* Media Query para resoluções menores que 1500px */
+  @media (max-width: 1499px) {
+      .imagens_comentario img {
+          display: none; /* Esconde as imagens */
+      }
+      .imagens_comentario .ver_imagens {
+          display: flex; /* Mostra 'ver_imagens' */
+      }
+  }
+
+/* Media Query para resolução horizontal de 1006px */
+@media (max-width: 1290px) {
+    .sessaoTres {
+        flex-direction: column; /* Altera para empilhar os elementos verticalmente */
+        align-items: center; /* Centraliza os itens na coluna */
+    }
+
+    .container_generico {
+        padding-left: 0; /* Remove o padding-left para se ajustar ao centro */
+        width: 100%; /* Ocupa a largura total disponível */
+        max-width: 55.018rem; /* Para manter o mesmo max-width do mapa, se desejar */
+        margin-top: 2rem; /* Adiciona um espaço entre o mapa e as outras trilhas */
+    }
+
+    .mapa_container {
+        width: 100%; /* Garante que o mapa ocupe a largura total */
+        max-width: 55.018rem;
+    }
+
+    .outras_trilhas {
+        width: 100%; /* Ajusta a largura da lista de outras trilhas */
+        max-width: 55.018rem; /* Mantém o max-width original */
+        margin: 0 auto; /* Centraliza o container de outras trilhas */
+    }
+
+    .trilha_item {
+        width: calc(100% - 1rem); /* Ajusta a largura para caber no container com padding */
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+}
+
+/* Media Query para resolução horizontal de 1005px (ou menor) */
+@media (max-width: 1290px) {
+    .sessaoUm {
+        flex-direction: column; /* Empilha o carrossel e as informações */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    #carouselImagens {
+        width: 100%; /* Carrossel ocupa a largura total */
+        max-width: 55.018rem; /* Mantém a largura máxima */
+    }
+
+    .Infos_trilha {
+        width: 100%; /* Ocupa a largura total disponível */
+        max-width: 55.018rem; /* Ajusta para a mesma largura do carrossel */
+        padding-left: 0; /* Remove o padding-left */
+        margin-top: 2rem; /* Adiciona um espaço entre o carrossel e as informações */
+        height: auto; /* Altura automática */
+        display: flex; /* Transforma Infos_trilha em um flex container */
+        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+        justify-content: center; /* Centraliza os itens horizontalmente */
+        gap: 1.25rem; /* Espaçamento entre os itens */
+    }
+
+    .localizacao,
+    .dificuldade,
+    .Tempo_distancia,
+    .sinalizacao {
+        width: calc(50% - 1rem); /* Para dois itens por linha, considerando o gap */
+        max-width: 24.188rem; /* Mantém o max-width original */
+        margin-top: 0; /* Remove o margin-top para ajuste de layout flexível */
+    }
+
+    .localizacao {
+        order: 1; /* Primeira posição */
+    }
+
+    .Tempo_distancia {
+        order: 2; /* Segunda posição */
+        width: calc(50% - 1rem); /* Mantém o ajuste para dois itens por linha */
+        gap: 1.25rem; /* Espaçamento entre tempo e distancia */
+    }
+
+    .tempo, .distancia {
+        width: 100%; /* Ocupam a largura total dentro de Tempo_distancia */
+        margin-top: 0;
+    }
+
+    .dificuldade {
+        order: 3; /* Terceira posição */
+    }
+
+    .sinalizacao {
+        order: 4; /* Quarta posição */
+    }
+}
+
+/* ====== MOBILE (até 768px) ====== */
+@media (max-width: 768px) {
+    .main {
+        margin-inline: 1rem; /* Reduz margens laterais */
+        margin-top: 6rem; /* espaço pro header fixo */
+    }
+
+    .Nome_trilha {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .stars {
+        display: flex;
+        justify-content: center;
+    }
+
+    .sessaoUm {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #carouselImagens {
+        width: 100%;
+        height: auto;
+    }
+
+    #carouselImagens .carousel-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .Infos_trilha {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin-top: 1rem;
+    }
+
+    .localizacao,
+    .dificuldade,
+    .Tempo_distancia,
+    .sinalizacao {
+        width: 100% !important;
+        margin-top: 0.8rem;
+    }
+
+    .Tempo_distancia {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .Post_perfil {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .descricao {
+        margin: 2rem 0 1rem 0;
+        font-size: 0.9rem;
+        text-align: justify;
+    }
+
+    .sessaoTres {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    iframe {
+        height: 16rem;
+    }
+
+    .container_generico,
+    .outras_trilhas {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .trilha_item {
+        width: 100%;
+    }
+
+    .Qnt_filtro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .botoes_comentarios {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: flex-start;
+    }
+
+    .botoes_comentarios button {
+        width: 100%;
+    }
+
+    .perfil_comentario {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container_comentario {
+        width: 100%;
+        margin-inline: 0;
+    }
+
+    .imagens_comentario {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .imagens_comentario img,
+    .ver_imagens,
+    .ver_todas {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+    }
+
+    .linha {
+        width: 100%;
+    }
+}

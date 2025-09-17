@@ -3,21 +3,34 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./Dashboard_da_trilha.css" />
+    <link rel="stylesheet" href="./Dashboard_da_trilha_responsivo.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <title>Document</title>
 </head>
 <body>
     <header>
-        <img src="imagens/Trekit_logo.svg" alt="Trekit_logo" />
-        <div class="center_header">
-            <div>Explorar</div>
-            <div>Minhas Trilhas</div>
-        </div>
-        <div class="direita_header">
-            <div>Cadastrar-se</div>
-            <button class="button_header">Entre</button>
-        </div>
+        <nav class="navbar_inner"> <!-- Adicionado o wrapper interno para alinhamento -->
+            <div class="logo">
+                <img src="imagens/Trekit_logo.svg" alt="Logo Triket">
+            </div>
+            
+            <div class="nav_links" id="nav-links">
+                <div class="botoesnavcentrais">
+                    <button class="botaonavbase">Explorar</button>
+                    <button class="botaonavbase">Minhas Trilhas</button>
+                </div>
+                <div class="botoesnavlogin">
+                    <button class="botaonavbase">Cadastrar</button>
+                    <button class="botaologar">Entrar</button>
+                </div>
+            </div>
+            
+            <button class="hamburger_menu" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
     </header>
     <div class="main">
         <div class="Nome_trilha">
