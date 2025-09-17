@@ -1,411 +1,437 @@
 @font-face {
-  font-family: "Inter";
-  src: url("fontes/Inter-VariableFont_opsz\,wght.ttf") ;
-}
-*{
-    margin: 0%;    
-    font-family:"Inter";
-}
-header{
-    height: 8rem;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1rem;
-}
-header img{
-    height: 2.188rem;
-    width: 6.438rem;
-    margin-inline: 10.313rem;
-}
-.center_header{
-    width: auto;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    gap: 3rem;
-}
-.direita_header{
-    width: auto;
-    margin-inline: 10.313rem;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    gap: 3rem;
-}
-.button_header{
-    background-color: #2FAC66;
-    border: none;
-    border-radius: 10px;
-    height: 3.03rem;
-    width: 7.127rem;
-    font-size: 1rem;
-    color: white;
-}
-.main{
-    background-color: #ac2f2f00;
-    margin-inline: 13.438rem;
-    height: auto;
+    font-family: "Inter";
+    src: url("fontes/Inter-VariableFont_opsz\,wght.ttf") ;
+  }
+  *{
+      margin: 0%;    
+      font-family:"Inter";
+  }
+  header{
+      height: 8rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+  }
+  header img{
+      height: 2.188rem;
+      width: 6.438rem;
+      margin-inline: 10.313rem;
+  }
+  .center_header{
+      width: auto;
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+      gap: 3rem;
+  }
+  .direita_header{
+      width: auto;
+      margin-inline: 10.313rem;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      gap: 3rem;
+  }
+  .button_header{
+      background-color: #2FAC66;
+      border: none;
+      border-radius: 10px;
+      height: 3.03rem;
+      width: 7.127rem;
+      font-size: 1rem;
+      color: white;
+  }
+  .main{
+      background-color: #ac2f2f00;
+      margin-inline: 13.438rem;
+      height: auto;
+      
+  }
+  .Nome_trilha{
+      font-size: 2rem;
+      margin-top: 3.938rem;
+  }
+  .stars{
+      margin-left:0%;
+      margin-top: -1%;
+      margin-bottom: 2.188rem;
+  
+  }
+  .stars img{
+      height: 2.018rem;
+      width: 10.644rem;
+  }
+  .sessaoUm{
+      display: flex;
+      justify-content: space-between;
+  }
+  /* CAROUSEL */
+  #carouselImagens {
+      width: 55.018rem;
+      height: 27.034rem; 
+      overflow: hidden;
+      border-radius: 2rem;
+    }
     
-}
-.Nome_trilha{
-    font-size: 2rem;
-    margin-top: 3.938rem;
-}
-.stars{
-    margin-left:0%;
-    margin-top: -1%;
-    margin-bottom: 2.188rem;
-
-}
-.stars img{
-    height: 2.018rem;
-    width: 10.644rem;
-}
-.sessaoUm{
-    display: flex;
-    justify-content: space-between;
-}
-/* CAROUSEL */
-#carouselImagens {
-    width: 55.018rem;
-    height: 27.034rem; 
-    overflow: hidden;
-    border-radius: 2rem;
+    #carouselImagens .carousel-item img {
+      object-fit: cover;
+      width: 55.018rem;
+      height: 27.034rem; 
+    } 
+    /* Botões do carrossel */
+  #carouselImagens .carousel-control-prev,
+  #carouselImagens .carousel-control-next {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: white;
+    border-radius: 50%;
+    top: 90%;
+    transform: translateY(-50%);
+    opacity: 1; /* sempre visível */
   }
   
-  #carouselImagens .carousel-item img {
-    object-fit: cover;
-    width: 55.018rem;
-    height: 27.034rem; 
-  } 
-  /* Botões do carrossel */
-#carouselImagens .carousel-control-prev,
-#carouselImagens .carousel-control-next {
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: white;
-  border-radius: 50%;
-  top: 90%;
-  transform: translateY(-50%);
-  opacity: 1; /* sempre visível */
-}
-
-/* Ícones */
-#carouselImagens .carousel-control-prev-icon,
-#carouselImagens .carousel-control-next-icon {
-  filter: invert(1); /* deixa preto */
-  width: 1rem;
-  height: 1rem;
-}
-
-/* Ajuste da posição */
-#carouselImagens .carousel-control-prev {
-  left: 1rem;
-}
-
-#carouselImagens .carousel-control-next {
-  right: 1rem;
-}
-/* ---------------------- */
-
-.Infos_trilha{
-    height: 27.034rem; 
-    width: auto;
-}
-.label_infos {
-    display: inline-block;
-    margin-left: 1.063rem;
-    margin-top: 1.063rem;
-    font-weight: bold;
-}
-.content_infos{
-    margin-left: 1.063rem;
-}
-.localizacao{
-    background-color: #E2E8E4;
-    width: 24.188rem;
-    height: 5.5rem;
-    border-radius: 0.8rem;
-    display: block;
-}
-.dificuldade{
-    background-color: #E2E8E4;
-    width: 24.188rem;
-    height: 5.5rem;
-    border-radius: 0.8rem;
-    margin-top: 1.25rem;
-}
-.Tempo_distancia{
-    display: flex;
-    justify-content: space-between;
-}
-.tempo{
-    background-color: #E2E8E4;
-    width: 11.5rem;
-    height: 5.5rem;
-    border-radius: 0.8rem;
-    margin-top: 1.25rem;
-}
-.distancia{
-    background-color: #E2E8E4;
-    width: 11.5rem;
-    height: 5.5rem;
-    border-radius: 0.8rem;
-    margin-top: 1.25rem;
-}
-.sinalizacao{
-    background-color: #E2E8E4;
-    width: 24.188rem;
-    height: 5.5rem;
-    border-radius: 0.8rem;
-    margin-top: 1.25rem;
-}
-.Post_perfil{
-    margin-top: 1.625rem;
-    display: flex;
-    justify-content: space-between;
-    width: 55.018rem;
-}
-.Container_perfil{
-    display: flex;
-    align-items: center;
-}
-.Nome_perfil{
-    font-size: 1.2rem;
-}
-.Post_perfil img{
-    height: 3.693rem;
-    width: 3.75rem;
-}
-.post_nome_data{
-    display: block;
-    align-items: center;
-    margin-left: 1.625rem;
-}
-.like img{
-    height: 2.5rem;
-    width: 2.5rem;
-}
-.descricao{
-    margin-left: 1.5rem;
-    margin-top: 4.063rem;
-    width: 55.018rem;
-    font-size: 0.95rem;
-}
-.sessaoTres{
-    display: flex;
-    justify-content: space-between;
-}
-.mapa_container{
-    margin-top: 8.125rem;
-}
-.mapa_container p{
-    font-size: 2rem;
-}
-iframe {
-    width: 100%;
-    height: 27.034rem;
-    border-radius: 2rem;
-    border: none; /* remover a borda inline */
-    margin-bottom: 2rem;
-  }
-.Info_endereco{
-    font-size: 1.2rem;
-    display: flex;
-    margin-bottom: 8rem;
-}
-.Info_endereco img{
-    margin-right: 0.625rem;
-}
-.title_OT{
-    font-size: 1.8rem;
-    width: 24.188rem;
-}
-.outras_trilhas{
-    height: 39.625rem;
-    width: 24.188rem;
-    overflow-y: auto;
-    overflow-x: hidden;
-    background-color: #f9f9f9;
-    padding-right: 0.5rem; /* espaço para a rolagem */
-    border-radius: 0.8rem;
-}
-.outras_trilhas::-webkit-scrollbar {
-    width: 8px;
-}
-
-.outras_trilhas::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-
-.outras_trilhas::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-.outras_trilhas::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-.trilha_item{
-    width: 23.25rem;
-    height: 8.633rem;
-    background-color: #E2E8E4;
-    margin-bottom: 0.688rem;
-    border-radius: 0.6rem;
-    display: flex;
-}
-.preview_OT{
-    height: 8.625rem;
-    width: 10.509rem;
-    border-radius: 0.6rem;
-
-}
-.trilhas_OT_info{
-    margin-left: 1.125rem;
-    margin-top: 1.313rem;
-}
-.nome_trilha_OT{
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-.avaliacao_OT img{
-    width: 6.108rem;
-    height: 1.102rem;
-}
-.container_generico{
-    display: block;
-}
-.sessaoQuatro{
-    display: block;
-}
-.Comentarios_title{
-    font-size: 2rem;
-}
-.Qnt_filtro{
-    display: flex;
-    justify-content: space-between;
-    width: 18.75rem;
-    margin-bottom: 2.688rem;
-}
-.input_comentario{  
-    height: 5.25rem;
-    width: 100%;
-    border-radius: 1rem;
-    border: none;
-    background-color: #E2E8E4;
-    margin-bottom: 1.125rem;
-}
-.input_comentario::placeholder{
-    padding-left: 1rem;
-    padding-top: 1rem !important;
-}
-.botoes_comentarios{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 3.313rem;
-
-}
-.botoes_comentarios button{
-    width: 7.563rem;
-    height: 2.313rem;
-    border-radius: 0.6rem;
-}
-.botao_anexar{
-    color: white;
-    background-color:#2FAC66;
-    border: none ;
-
-}
-.botao_cancelar{
-    border: 0.1rem solid;
-}
-.botao_enviar{
-    border: none;
-    background: #2FAC66;
-    background: linear-gradient(90deg,rgba(47, 172, 102, 1) 0%, rgba(75, 200, 234, 1) 100%);
-    color: white;
-}
-.comentario{
-    display: block;
-}
-.perfil_comentario{
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.688rem;
-}
-.Foto_e_nome{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-size: 1.2rem;
-    margin-right: 1.25rem;
-}
-.foto_comentario{
-    height: 4.063rem;
-    width: 4.063rem;
-    background-color: #2FAC66;
-    border-radius: 50%;
-    margin-right: 1.25rem;
-}
-.Content_comentario{
-    justify-items: center;
-
-}
-.container_comentario{
-    width: 70.938rem;
-    margin-bottom: 4.813rem;
-
-}
-.texto_comentario{
-    margin-bottom: 2.75rem;
-}
-.imagens_comentario{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2.813rem;
-}
-.imagens_comentario img{
-    height: 16.761rem;
-    width: 21.539rem;
-    border-radius: 1.7rem;
-}
-.ver_imagens{
-    height: 16.761rem;
-    width: 21.539rem;
-    border-radius: 1.7rem;
-    background-image: url('https://toptripadventure.com.br/wp-content/uploads/2022/06/itupava-4.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-.ver_todas{
-    background-color: #0000009a;
-    border-radius: 1.7rem;
-    height: 16.761rem;
-    width: 21.539rem;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.Curtir{
-    width: 7.125rem;
-    height: 2.438rem;
-    background-color: #E2E8E4;
-    justify-content: center;
-    border-radius: 0.9rem;
-    align-items: center;
-    display: flex;
-}
-.Curtir img{
-    margin-right: 1rem;
-}
-.linha{
-    width: 70.938rem;
+  /* Ícones */
+  #carouselImagens .carousel-control-prev-icon,
+  #carouselImagens .carousel-control-next-icon {
+    filter: invert(1); /* deixa preto */
+    width: 1rem;
     height: 1rem;
-    box-shadow: 0px -1px 0px #5B605C;
-}
-
+  }
+  
+  /* Ajuste da posição */
+  #carouselImagens .carousel-control-prev {
+    left: 1rem;
+  }
+  
+  #carouselImagens .carousel-control-next {
+    right: 1rem;
+  }
+  /* ---------------------- */
+  
+  .Infos_trilha{
+      height: 27.034rem; 
+      width: 100%;
+      max-width: 24.188rem;
+      padding-left: 2rem;
+  }
+  .label_infos {
+      display: inline-block;
+      margin-left: 1.063rem;
+      margin-top: 1.063rem;
+      font-weight: bold;
+  }
+  .content_infos{
+      margin-left: 1.063rem;
+  }
+  .localizacao{
+      background-color: #E2E8E4;
+      width: 109.015%;
+      height: 5.5rem;
+      border-radius: 0.8rem;
+      display: block;
+  }
+  .dificuldade{
+      background-color: #E2E8E4;
+      width: 109.015%;
+      height: 5.5rem;
+      border-radius: 0.8rem;
+      margin-top: 1.25rem;
+  }
+  .Tempo_distancia{
+      display: flex;
+      width: 110%;
+      max-width: 24.188rem;
+      justify-content: space-between;
+  }
+  .tempo{
+      background-color: #E2E8E4;
+      width: 47.55%;
+      height: 5.5rem;
+      border-radius: 0.8rem;
+      margin-top: 1.25rem;
+  }
+  .distancia{
+      background-color: #E2E8E4;
+      width: 47.55%;
+      height: 5.5rem;
+      border-radius: 0.8rem;
+      margin-top: 1.25rem;
+  }
+  .sinalizacao{
+      background-color: #E2E8E4;
+      width: 109.015%;
+      height: 5.5rem;
+      border-radius: 0.8rem;
+      margin-top: 1.25rem;
+  }
+  .sessaoDois{
+    width: 67.452%;
+    max-width: 55.018rem;
+  }
+  .Post_perfil{
+      margin-top: 1.625rem;
+      display: flex;
+      justify-content: space-between;
+      max-width: 55.018rem;
+      width: 99%;
+  }
+  .Container_perfil{
+      display: flex;
+      align-items: center;
+  }
+  .Nome_perfil{
+      font-size: 1.2rem;
+  }
+  .Post_perfil img{
+      height: 3.693rem;
+      width: 3.75rem;
+  }
+  .post_nome_data{
+      display: block;
+      align-items: center;
+      margin-left: 1.625rem;
+  }
+  .like img{
+      height: 2.5rem;
+      width: 2.5rem;
+  }
+  .descricao{
+      margin-left: 1.5rem;
+      margin-top: 4.063rem;
+      width: 95%;
+      max-width: 55.018rem;
+      font-size: 0.95rem;
+  }
+  .sessaoTres{
+      display: flex;
+      justify-content: space-between;
+  }
+  .mapa_container{
+      margin-top: 8.125rem;
+  }
+  .mapa_container p{
+      font-size: 2rem;
+  }
+  iframe {
+      width: 100%;
+      height: 27.034rem;
+      border-radius: 2rem;
+      border: none; /* remover a borda inline */
+      margin-bottom: 2rem;
+    }
+  .Info_endereco{
+      font-size: 1.2rem;
+      display: flex;
+      margin-bottom: 8rem;
+  }
+  .Info_endereco img{
+      margin-right: 0.625rem;
+  }
+  .title_OT{
+      font-size: 1.8rem;
+      width: 24.188rem;
+  }
+  .outras_trilhas{
+      height: 39.625rem;
+      width: 24.188rem;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background-color: #f9f9f9;
+      padding-right: 0.5rem; /* espaço para a rolagem */
+      border-radius: 0.8rem;
+  }
+  .outras_trilhas::-webkit-scrollbar {
+      width: 8px;
+  }
+  
+  .outras_trilhas::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+  }
+  
+  .outras_trilhas::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+  }
+  
+  .outras_trilhas::-webkit-scrollbar-thumb:hover {
+      background: #555;
+  }
+  .trilha_item{
+      width: 23.25rem;
+      height: 8.633rem;
+      background-color: #E2E8E4;
+      margin-bottom: 0.688rem;
+      border-radius: 0.6rem;
+      display: flex;
+  }
+  .preview_OT{
+      height: 8.625rem;
+      width: 10.509rem;
+      border-radius: 0.6rem;
+  
+  }
+  .trilhas_OT_info{
+      margin-left: 1.125rem;
+      margin-top: 1.313rem;
+  }
+  .nome_trilha_OT{
+      font-size: 1.1rem;
+      font-weight: 600;
+  }
+  .avaliacao_OT img{
+      width: 6.108rem;
+      height: 1.102rem;
+  }
+  .container_generico{
+      display: block;
+      padding-left: 2rem;
+  }
+  .sessaoQuatro{
+      display: block;
+  }
+  .Comentarios_title{
+      font-size: 2rem;
+  }
+  .Qnt_filtro{
+      display: flex;
+      justify-content: space-between;
+      width: 18.75rem;
+      margin-bottom: 2.688rem;
+  }
+  .input_comentario{  
+      height: 5.25rem;
+      width: 100%;
+      border-radius: 1rem;
+      border: none;
+      background-color: #E2E8E4;
+      margin-bottom: 1.125rem;
+  }
+  .input_comentario::placeholder{
+      padding-left: 1rem;
+      padding-top: 1rem !important;
+  }
+  .botoes_comentarios{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3.313rem;
+  
+  }
+  .botoes_comentarios button{
+      width: 7.563rem;
+      height: 2.313rem;
+      border-radius: 0.6rem;
+  }
+  .botao_anexar{
+      color: white;
+      background-color:#2FAC66;
+      border: none ;
+  
+  }
+  .botao_cancelar{
+      border: 0.1rem solid;
+  }
+  .sessaoCinco{
+  
+  }
+  .botao_enviar{
+      border: none;
+      background: #2FAC66;
+      background: linear-gradient(90deg,rgba(47, 172, 102, 1) 0%, rgba(75, 200, 234, 1) 100%);
+      color: white;
+  }
+  .comentario{
+      display: block;
+  }
+  .perfil_comentario{
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.688rem;
+  }
+  .Foto_e_nome{
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 1.2rem;
+      margin-right: 1.25rem;
+  }
+  .foto_comentario{
+      height: 4.063rem;
+      width: 4.063rem;
+      background-color: #2FAC66;
+      border-radius: 50%;
+      margin-right: 1.25rem;
+  }
+  .Content_comentario{
+      justify-items: center;
+      margin-inline: 13.438rem;
+  
+  }
+  .container_comentario{
+      width: 160%;
+      max-width: 70.938rem;
+      margin-bottom: 4.813rem;
+  
+  }
+  .texto_comentario{
+      margin-bottom: 2.75rem;
+  }
+  .imagens_comentario{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2.813rem;
+  }
+  .imagens_comentario img{
+      height: 16.761rem;
+      width: 21.539rem;
+      border-radius: 1.7rem;
+      margin-inline: 0.1rem;
+      display: block; 
+  }
+  .ver_imagens{
+      height: 16.761rem;
+      width: 21.539rem;
+      border-radius: 1.7rem;
+      background-image: url('https://toptripadventure.com.br/wp-content/uploads/2022/06/itupava-4.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  .ver_todas{
+      background-color: #0000009a;
+      border-radius: 1.7rem;
+      height: 16.761rem;
+      width: 21.539rem;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .Curtir{
+      width: 7.125rem;
+      height: 2.438rem;
+      background-color: #E2E8E4;
+      justify-content: center;
+      border-radius: 0.9rem;
+      align-items: center;
+      display: flex;
+  }
+  .Curtir img{
+      margin-right: 1rem;
+  }
+  .linha{
+      width: 160%;
+      height: 1rem;
+      box-shadow: 0px -1px 0px #5B605C;
+  }
+  
+  /* Media Query para resoluções menores que 1500px */
+  @media (max-width: 1499px) {
+      .imagens_comentario img {
+          display: none; /* Esconde as imagens */
+      }
+      .imagens_comentario .ver_imagens {
+          display: flex; /* Mostra 'ver_imagens' */
+      }
+  }
