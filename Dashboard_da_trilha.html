@@ -42,13 +42,13 @@
         <div class="sessaoUm">
             <div id="carouselImagens" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active" onclick="openModal()" >
                         <img src="https://hotelrouxinol.com.br/wp-content/uploads/2019/02/saiba-aqui-quais-sao-as-5-melhores-trilhas-em-santa-catarina.jpeg" class="d-block w-100" alt="..." />
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item" onclick="openModal()">
                         <img src="https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/04/Design-sem-nome-1-e1744561238543.png?w=1200&h=900&crop=1" class="d-block w-100" alt="..." />
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item" onclick="openModal()">
                         <img src="https://agendor-blog-uploads.s3.sa-east-1.amazonaws.com/2022/09/12094319/trilha-de-aprendizagem-organizacional.jpg" class="d-block w-100" alt="..." />
                     </div>
                 </div>
@@ -61,6 +61,13 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button id="closeModalBtn" class="close" aria-label="Fechar">&times;</button>
+    <!-- A imagem do modal será atualizada via JS -->
+    <img id="modalImage" src="" alt="Imagem ampliada" />
+  </div>
+</div>
             <div class="Infos_trilha">
                 <div class="localizacao">
                     <span class="label_infos">Localização</span>
@@ -227,7 +234,6 @@
             </div>
         </div>
     </div>
-    <script src="Dashboard_da_trilha.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-</body>
+    <script src="Dashboard_da_trilha.js"></script></body>
 </html>

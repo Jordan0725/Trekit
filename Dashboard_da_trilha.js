@@ -1,35 +1,110 @@
-const carouselElement = document.querySelector('#carouselImagens');
-const carousel = new bootstrap.Carousel(carouselElement, {
-  // interval: 3000, // muda slide a cada 3 segundos
-  ride: 'carousel', // inicia automaticamente
-  pause: 'hover', // pausa no hover
-  wrap: true, // volta ao primeiro slide depois do último
-});
+(function () {
+  'use strict';
 
-document.addEventListener('DOMContentLoaded', function() {
-  const imagensComentario = document.querySelector('.imagens_comentario');
-  const imgs = imagensComentario.querySelectorAll('img');
-  const verImagensDiv = imagensComentario.querySelector('.ver_imagens');
+  // Aguarda o carregamento completo da página (inclui scripts externos como bootstrap)
+  window.addEventListener('load', function () {
 
-  function verificarResolucao() {
-      if (window.innerWidth < 1500) {
-          // Se a resolução for menor que 1500px
-          imgs.forEach(img => {
-              img.style.display = 'none'; // Esconde as imagens
-          });
-          verImagensDiv.style.display = 'flex'; // Mostra a div "ver_imagens"
-      } else {
-          // Se a resolução for 1500px ou maior
-          imgs.forEach(img => {
-              img.style.display = 'block'; // Mostra as imagens
-          });
-          verImagensDiv.style.display = 'none'; // Esconde a div "ver_imagens"
+    // Remove onclick inline potencialmente quebrado (opcional, evita erros)
+    document.querySelectorAll('#carouselImagens .carousel-item[onclick]').forEach(el => el.removeAttribute('onclick'));
+
+    // --- Inicializa o carousel (só se o bootstrap estiver disponível) ---
+    const carouselEl = document.querySelector('#carouselImagens');
+    if (carouselEl && window.bootstrap && typeof window.bootstrap.Carousel === 'function') {
+      try {
+        new bootstrap.Carousel(carouselEl, {
+          ride: false, // não iniciar automaticamente (ajuste se quiser)
+          pause: 'hover',
+          wrap: true,
+        });
+      } catch (err) {
+        console.warn('Erro ao iniciar bootstrap carousel:', err);
       }
-  }
+    }
 
-  // Executa a função na carga da página
-  verificarResolucao();
+    // --- Modal e helpers ---
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+    const closeBtn = document.getElementById('closeModalBtn');
 
-  // Adiciona um listener para quando a janela for redimensionada
-  window.addEventListener('resize', verificarResolucao);
-});
+    function openModalWithSrc(src, alt = '') {
+      if (!modal || !modalImage) return;
+      modalImage.src = src || '';
+      modalImage.alt = alt || 'Imagem ampliada';
+      // Exibir como flex (seu CSS usa display:flex)
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      if (!modal || !modalImage) return;
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      modalImage.src = '';
+      document.body.style.overflow = '';
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+    // Clique fora do conteúdo fecha
+    if (modal) {
+      modal.addEventListener('click', function (ev) {
+        if (ev.target === modal) closeModal();
+      });
+    }
+
+    // Fechar com Escape
+    window.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' && modal && modal.style.display === 'flex') closeModal();
+    });
+
+    // --- Anexa listeners nas imagens do carrossel (e outras miniaturas) ---
+    // Seletores cobrem:
+    //  - imagens dentro do carrossel (#carouselImagens .carousel-item img)
+    //  - imagens em comentários (.imagens_comentario img)
+    //  - previews de outras trilhas (.preview_OT)
+    const selectors = [
+      '#carouselImagens .carousel-item img',
+      '.imagens_comentario img',
+      '.preview_OT'
+    ];
+    const allImgs = Array.from(document.querySelectorAll(selectors.join(',')));
+
+    allImgs.forEach(img => {
+      // cursor visual
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function (e) {
+        e.preventDefault();
+        // se existir data-large-src use ela (para versões em maior resolução), senão usa src
+        const src = img.getAttribute('data-large-src') || img.src;
+        openModalWithSrc(src, img.alt || '');
+      });
+    });
+
+    // Também captura clique em .carousel-item (caso clique fora da img)
+    document.querySelectorAll('#carouselImagens .carousel-item').forEach(item => {
+      item.addEventListener('click', function (e) {
+        if (e.target.tagName.toLowerCase() !== 'img') {
+          const img = item.querySelector('img');
+          if (img) {
+            const src = img.getAttribute('data-large-src') || img.src;
+            openModalWithSrc(src, img.alt || '');
+          }
+        }
+      });
+    });
+
+    // Compatibilidade: expõe uma função global openModal() que abre a imagem ativa do carousel
+    // Isso evita erro caso ainda exista onclick="openModal()" no HTML.
+    window.openModal = function () {
+      const activeItem = document.querySelector('#carouselImagens .carousel-item.active') ||
+                         document.querySelector('#carouselImagens .carousel-item');
+      if (!activeItem) return;
+      const img = activeItem.querySelector('img');
+      if (!img) return;
+      const src = img.getAttribute('data-large-src') || img.src;
+      openModalWithSrc(src, img.alt || '');
+    };
+
+  }); // window.load
+})();
