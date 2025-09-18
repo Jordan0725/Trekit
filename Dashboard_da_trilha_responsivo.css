@@ -500,6 +500,44 @@ body {
   .sessaoCinco{
   
   }
+  /* Cores específicas para cada botão */
+.btn-explorar {
+  background: transparent;
+  font-weight: 600;
+}
+
+.btn-minhas {
+  background: transparent;
+  font-weight: 600;
+}
+
+.btn-cadastrar {
+  background: transparent;
+  font-weight: 600;
+}
+
+/* Entrar já usa .botaologar, mas ajusto para consistência */
+.btn-entrar {
+  background: var(--verde);
+  color: #ffffff;
+  border: none;
+}
+
+/* Pequeno ajuste visual quando o menu mobile aparece:
+   garante que botões apareçam com boa hierarquia */
+.nav_links .botaonavbase,
+.nav_links .botaologar {
+  transition: transform .18s ease, opacity .18s ease;
+  margin-block: 0rem;
+}
+
+/* Quando o menu abrir, se quiser podemos dar um espaçamento extra */
+.nav_links.active .botaonavbase,
+.nav_links.active .botaologar {
+  transform: none;
+  opacity: 1;
+}
+
   .botao_enviar{
       border: none;
       background: #2FAC66;
@@ -695,22 +733,51 @@ body {
         order: 4; /* Quarta posição */
     }
 }
-
+@media (max-width: 1003px){
+        .main {
+        margin-inline: 2rem; /* Reduz margens laterais */
+        margin-top: 6rem; /* espaço pro header fixo */
+    }
+        .Infos_trilha {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin-top: 0.1rem;
+        align-content: center;
+        justify-content: center;
+    }
+        .sessaoUm {
+        flex-direction: column;
+        align-items: center;
+    }
+    .localizacao,
+    .dificuldade,
+    .Tempo_distancia,
+    .sinalizacao {
+        max-width: 100%;
+        width: 100% !important;
+        margin-top: 0.8rem;
+    }
+    .sessaoDois{
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        width: 100%;
+    }
+}
 /* ====== MOBILE (até 768px) ====== */
 @media (max-width: 768px) {
     .main {
-        margin-inline: 1rem; /* Reduz margens laterais */
+        margin-inline: 2rem; /* Reduz margens laterais */
         margin-top: 6rem; /* espaço pro header fixo */
     }
 
     .Nome_trilha {
         font-size: 1.5rem;
-        text-align: center;
     }
 
     .stars {
         display: flex;
-        justify-content: center;
     }
 
     .sessaoUm {
@@ -732,7 +799,7 @@ body {
         flex-direction: column;
         width: 100%;
         padding: 0;
-        margin-top: 1rem;
+        margin-top: 0.1rem;
     }
 
     .localizacao,
@@ -744,12 +811,15 @@ body {
     }
 
     .Tempo_distancia {
-        flex-direction: column;
+        flex-direction: flex;
         gap: 0.8rem;
+    }
+    .sessaoDois{
+        width: 97.5%;
     }
 
     .Post_perfil {
-        flex-direction: column;
+        flex-direction: flex;
         gap: 1rem;
         align-items: flex-start;
     }
@@ -763,6 +833,12 @@ body {
     .sessaoTres {
         flex-direction: column;
         gap: 2rem;
+    }
+    .mapa_container{
+        margin-top: 4rem;
+    }
+    .Info_endereco{
+        margin-bottom: 3rem;
     }
 
     iframe {
@@ -778,6 +854,9 @@ body {
     .trilha_item {
         width: 100%;
     }
+    .sessaoQuatro{
+        margin-top: 2rem;
+    }
 
     .Qnt_filtro {
         flex-direction: column;
@@ -786,18 +865,26 @@ body {
     }
 
     .botoes_comentarios {
-        flex-direction: column;
+        flex-direction: flex;
         gap: 0.8rem;
         align-items: flex-start;
     }
 
     .botoes_comentarios button {
+    
+    }
+    .comentario{
+        display: block;
+        width: 100%;
+    }
+    .Content_comentario{
+        margin: 0;
         width: 100%;
     }
 
     .perfil_comentario {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: flex;
+        align-items: center;
     }
 
     .container_comentario {
@@ -806,7 +893,7 @@ body {
     }
 
     .imagens_comentario {
-        flex-direction: column;
+        flex-direction: flex;
         align-items: center;
         gap: 0.5rem;
     }
@@ -815,7 +902,6 @@ body {
     .ver_imagens,
     .ver_todas {
         width: 100%;
-        height: auto;
         border-radius: 1rem;
     }
 

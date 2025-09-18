@@ -108,3 +108,49 @@
 
   }); // window.load
 })();
+
+// ---------- MENU HAMBURGER (toggle) ----------
+(function () {
+  const hamburger = document.getElementById('hamburger-btn');
+  const navLinks = document.getElementById('nav-links');
+
+  if (!hamburger || !navLinks) return;
+
+  // Toggle visual + acessibilidade
+  hamburger.addEventListener('click', function (e) {
+    const isActive = hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active', isActive);
+
+    // ARIA
+    hamburger.setAttribute('aria-expanded', String(isActive));
+    navLinks.setAttribute('aria-hidden', String(!isActive));
+
+    // Opcional: bloquear scroll do body quando menu aberto (útil em mobile)
+    document.body.style.overflow = isActive ? 'hidden' : '';
+  });
+
+  // Fecha o menu ao clicar em qualquer botão/ link dentro dele (UX comum)
+  navLinks.addEventListener('click', function (e) {
+    const target = e.target;
+    if (target && target.tagName.toLowerCase() === 'button') {
+      // Se for necessário navegar, aqui você pode colocar lógica (ex: window.location.href = ...)
+      // Fecha o menu:
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      navLinks.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Fecha o menu ao redimensionar para largura grande (evita ficar aberto por engano)
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 1000) {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      navLinks.setAttribute('aria-hidden', 'false'); // visível em desktop
+      document.body.style.overflow = '';
+    }
+  });
+})();
